@@ -109,8 +109,12 @@ describe('cubeSum', () => {
 
 // b) Create the function that makes the test pass.
 
+// const cubeSum = nums => {
+//   let output = 0
+//   nums.forEach(num => output += num**3)
+//   return output
+// }
+
 const cubeSum = nums => {
-  let output = 0
-  nums.forEach(num => output += num**3)
-  return output
+  return nums.reduce((a, b) => a + b**3, 0)
 }
