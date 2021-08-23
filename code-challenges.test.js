@@ -115,6 +115,8 @@ describe('cubeSum', () => {
 //   return output
 // }
 
-const cubeSum = nums => {
-  return nums.reduce((a, b) => a + b**3, 0)
-}
+// const cubeSum = nums => {
+//   return nums.reduce((a, b) => a + b**3, 0)
+// }
+
+const cubeSum = nums => nums.reduce((a, b) => a + b**3, 0)
