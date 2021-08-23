@@ -14,6 +14,11 @@ Then, research the question to expand on your answer. Even if you feel you have 
                 The above migration will not execute if the Animal model is missing this association declaration.
 
   Researched answer:
+              After doing some research, apparently this solution is relatively new. I actually couldn't find a result on the first page of search results that mentioned this approach. The most common method I saw was
+              to create a migration that uses `add_foreign_key <model>_id` for the child table. These solutions were all being posted in relation to releases < Rails 5.0. After seeing all these results I began to
+              doubt myself(I was confident that my method would work when creating the table but hadn't actually tested it for a migration for an already extant table) so I created a new model in my Wildlife Tracker
+              with no attributes and then ran a separate migration to add the belongs_to declaration. It worked as expected, so I have concluded that this must be a technique that wasn't always a part of Rails. I do
+              know it exists in Rails 5 so I would assume that is when it was added.
 
 
 
@@ -24,6 +29,8 @@ Then, research the question to expand on your answer. Even if you feel you have 
               passed params to direct it to the `edit` or `show` methods, but can also be used without params in order to access the index of all entries.
 
   Researched answer:
+              My answer above is based off the assumption that we are referring specifically to Rails routes, and limiting the scope of the question as such. That being said, every API call must include parameters
+              of some sort. The "fetch" call built into most browsers always requires a "document type" parameter, typically "application/json."
 
 
 
@@ -35,6 +42,9 @@ Then, research the question to expand on your answer. Even if you feel you have 
                `rails g resource` will generate a model, routes, and controller for a new table. If one of these already exists, this command will fail.
 
   Researched answer:
+                As per the Rails Guides, it looks like there is one more generate command that I haven't used before, which is `rails g scaffold`. This command accepts the same argument as `model`, but creates
+                much more boilerplate code than model does. In particular, it checks for the appropriate directories to negate any errors, then creates all of the necessary files for the new model, including the model itself.
+                This includes the migration, the model, controller, routes, and views for both html.erb and .jbuilder.
 
 
 
